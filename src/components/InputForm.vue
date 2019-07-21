@@ -5,7 +5,7 @@
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
 			<v-switch v-model="lazy" class="ma-3" label="Lazy"></v-switch>
 			</v-layout>-->
-			<v-flex xs6 sm6 md6>
+			<v-flex xs12 sm6 md6>
 				<v-img :src="require('../assets/GetNow.png')" min-width=50%></v-img>
 			
 				<v-form ref="form" v-model="valid" :lazy-validation="lazy">
@@ -16,7 +16,7 @@
 					<v-flex xs12 md4>
 						<v-select
 							v-model="select"
-							:items="itemss"
+							
 							:rules="[v => !!v || 'Item is required']"
 							label="Tobacco Use"
 							required
