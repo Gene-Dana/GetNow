@@ -1,27 +1,41 @@
 <template>
-	<v-container>
+	<v-container pa-3>
 		<v-layout wrap justify-center>
 			<!-- <v-layout row wrap justify-space-around>
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
 			<v-switch v-model="lazy" class="ma-3" label="Lazy"></v-switch>
 			</v-layout>-->
-			<v-flex xs12 sm6 md6>
-				<v-img :src="require('../assets/GetNow.png')" min-width=50%></v-img>
-			
+			<v-flex xs12 sm6 md8>
+				<v-card>
+					<v-img :src="require('../assets/GetNow.png')" min-width=50%></v-img>
+				</v-card>
+				
+			<v-card flat color=transparent >
 				<v-form ref="form" v-model="valid" :lazy-validation="lazy">
 					<v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
 
-					<v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+					<v-text-field v-model="email" :rules="emailRules" label="E-mail" required ></v-text-field>
 
-					<v-flex xs12 md4>
+					<v-layout>
+					<v-flex xs12 md6 lg2>
 						<v-select
 							v-model="select"
-							
+							:items = "tobacco"
 							:rules="[v => !!v || 'Item is required']"
 							label="Tobacco Use"
 							required
 						></v-select>
 					</v-flex>
+					<v-flex xs12 md6 lg2>
+						<v-select
+							v-model="select"
+							:items ="gender"
+							:rules="[v => !!v || 'Item is required']"
+							label="Gender"
+							required
+						></v-select>
+					</v-flex>
+					</v-layout>
 
 					<v-layout align-center justify-center row fill-height>
 						<v-flex xs12 md6>
@@ -33,7 +47,7 @@
 								required
 							></v-select>
 						</v-flex>
-						<v-flex>
+						<v-flex xs12 md6>
 							<v-select
 								v-model="selectDay"
 								:items="day"
@@ -53,19 +67,39 @@
 						</v-flex>
 					</v-layout>
 
+					<v-layout> 
+
+						<v-flex md-6>
+							<v-checkbox
+							v-model="checkbox2"
+							label="Include Spouse?"
+							>
+							</v-checkbox>
+						</v-flex>
+
+						<v-flex md-6>
+							<v-checkbox
+								v-model="checkbox3"
+								label="Include Children?"
+							></v-checkbox>
+						</v-flex>
+
+					</v-layout>
+
 					<v-checkbox
-						v-model="checkbox"
+						v-model="checkbox1"
 						:rules="[v => !!v || 'You must agree to continue!']"
 						label="Do you agree?"
 						required
 					></v-checkbox>
-
+		
 					<v-btn :disabled="!valid" color="success" class="mr-3" @click="validate">Validate</v-btn>
 
 					<v-btn color="error" class="mr-3" @click="reset">Reset Form</v-btn>
 
 					<v-btn color="warning" @click="resetValidation">Reset Validation</v-btn>
 				</v-form>
+			</v-card>
 			</v-flex>
 		</v-layout>
 	</v-container>
@@ -90,7 +124,8 @@ export default {
 		selectDay: null,
 		selectYear: null,
 
-		itemsss: ["Yes", "No", "1"],
+		tobacco: ["Yes", "No"],
+		gender: ["Female", "Male", "I prefer not to say"],
 		month: [
 			"January",
 			"February",
@@ -259,7 +294,9 @@ export default {
 			"1901",
 			"1900"
 		],
-		checkbox: false,
+		checkbox1: false,
+		checkbox2: false,
+		checkbox3: false,
 		lazy: false
 	}),
 
