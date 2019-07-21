@@ -1,14 +1,13 @@
 <template>
-	<v-container fluid>
-		<v-layout justify-center>
+	<v-container>
+		<v-layout wrap justify-center>
 			<!-- <v-layout row wrap justify-space-around>
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
 			<v-switch v-model="lazy" class="ma-3" label="Lazy"></v-switch>
 			</v-layout>-->
-			<v-flex xs6 sm6 md4>
+			<v-flex xs12 sm6 md6>
 				<v-img :src="require('../assets/GetNow.png')" min-width=50%></v-img>
-			</v-flex>
-			<v-flex xs6 sm6 md4>
+			
 				<v-form ref="form" v-model="valid" :lazy-validation="lazy">
 					<v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
 
