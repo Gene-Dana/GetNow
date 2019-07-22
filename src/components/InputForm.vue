@@ -7,99 +7,104 @@
 			</v-layout>-->
 			<v-flex xs12 sm6 md8>
 				<v-card>
-					<v-img :src="require('../assets/GetNow.png')" min-width=50%></v-img>
+					<v-img :src="require('../assets/GetNow.png')" min-width="50%"></v-img>
 				</v-card>
-				
-			<v-card flat color=transparent >
-				<v-form ref="form" v-model="valid" :lazy-validation="lazy">
-					<v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
 
-					<v-text-field v-model="email" :rules="emailRules" label="E-mail" required ></v-text-field>
+				<v-card flat color=transparent class="mt-4">
+					<p> &nbsp; &nbsp; &nbsp; Coverage when you need it, we deal specially in short term health insurance.
+						Short term health insurance is a great way for people to fill gaps in insurance coverage 
+						without sacrificing routine healthcare services. In some cases, you can get coverage as 
+						soon as tomorrow and can cancel anytime without a termination penalty. Plus, short term 
+						plans offer a range of deductibles making it easy to find the right benefits at the right 
+						price</p>
+				</v-card>
+				<v-card flat color="transparent">
+					<v-form ref="form" v-model="valid" :lazy-validation="lazy">
+						<v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
 
-					<v-layout>
-					<v-flex xs12 md6 lg2>
-						<v-select
-							v-model="select"
-							:items = "tobacco"
-							:rules="[v => !!v || 'Item is required']"
-							label="Tobacco Use"
+						<v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+
+						<v-layout>
+							<v-flex xs12 md6 lg2>
+								<v-select
+									v-model="select"
+									:items="tobacco"
+									:rules="[v => !!v || 'Item is required']"
+									label="Tobacco Use"
+									required
+								></v-select>
+							</v-flex>
+							<v-flex xs12 md6 lg2>
+								<v-select
+									v-model="select"
+									:items="gender"
+									:rules="[v => !!v || 'Item is required']"
+									label="Gender"
+									required
+								></v-select>
+							</v-flex>
+						</v-layout>
+
+						<v-layout align-center justify-center row fill-height>
+							<v-flex xs12 md6>
+								<v-select
+									v-model="selectMonth"
+									:items="month"
+									:rules="[v => !!v || 'Item is required']"
+									label="Month"
+									required
+								></v-select>
+							</v-flex>
+							<v-flex xs12 md6>
+								<v-select
+									v-model="selectDay"
+									:items="day"
+									:rules="[v => !!v || 'Item is required']"
+									label="Day"
+									required
+								></v-select>
+							</v-flex>
+							<v-flex xs12 md6>
+								<v-select
+									v-model="selectYear"
+									:items="year"
+									:rules="[v => !!v || 'Item is required']"
+									label="Year"
+									required
+								></v-select>
+							</v-flex>
+						</v-layout>
+
+						<v-layout>
+							<v-flex md-6>
+								<v-checkbox v-model="checkbox2" label="Include Spouse?"></v-checkbox>
+							</v-flex>
+
+							<v-flex md-6>
+								<v-checkbox v-model="checkbox3" label="Include Children?"></v-checkbox>
+							</v-flex>
+						</v-layout>
+						<div class="font-italic">
+							DISCLAIMER: By submitting your information you expressly consent
+							to receiving phone calls, e-mails and SMS messages from ProDesk,
+							it's subsidiaries and/or one of it's trusted partners at the phone
+							number or email listed above to provide you quotes for health insurance.
+							You understand that your consent to being contacted does not 
+							require you to purchase a health insurance plan. Receiving quotes from 
+							ProDesk is always free. Additional charges may apply to SMS, call or 
+							Internet usage depending on your data providers. You can opt out of 
+							receiving future messages from HealthNetwork.
+						</div>
+						<v-checkbox
+							v-model="checkbox1"
+							:rules="[v => !!v || 'You must agree to continue!']"
+							label="Do you agree?"
 							required
-						></v-select>
-					</v-flex>
-					<v-flex xs12 md6 lg2>
-						<v-select
-							v-model="select"
-							:items ="gender"
-							:rules="[v => !!v || 'Item is required']"
-							label="Gender"
-							required
-						></v-select>
-					</v-flex>
-					</v-layout>
+						></v-checkbox>
 
-					<v-layout align-center justify-center row fill-height>
-						<v-flex xs12 md6>
-							<v-select
-								v-model="selectMonth"
-								:items="month"
-								:rules="[v => !!v || 'Item is required']"
-								label="Month"
-								required
-							></v-select>
-						</v-flex>
-						<v-flex xs12 md6>
-							<v-select
-								v-model="selectDay"
-								:items="day"
-								:rules="[v => !!v || 'Item is required']"
-								label="Day"
-								required
-							></v-select>
-						</v-flex>
-						<v-flex xs12 md6>
-							<v-select
-								v-model="selectYear"
-								:items="year"
-								:rules="[v => !!v || 'Item is required']"
-								label="Year"
-								required
-							></v-select>
-						</v-flex>
-					</v-layout>
-
-					<v-layout> 
-
-						<v-flex md-6>
-							<v-checkbox
-							v-model="checkbox2"
-							label="Include Spouse?"
-							>
-							</v-checkbox>
-						</v-flex>
-
-						<v-flex md-6>
-							<v-checkbox
-								v-model="checkbox3"
-								label="Include Children?"
-							></v-checkbox>
-						</v-flex>
-
-					</v-layout>
-
-					<v-checkbox
-						v-model="checkbox1"
-						:rules="[v => !!v || 'You must agree to continue!']"
-						label="Do you agree?"
-						required
-					></v-checkbox>
-		
-					<v-btn :disabled="!valid" color="success" class="mr-3" @click="validate">Validate</v-btn>
-
-					<v-btn color="error" class="mr-3" @click="reset">Reset Form</v-btn>
-
-					<v-btn color="warning" @click="resetValidation">Reset Validation</v-btn>
-				</v-form>
-			</v-card>
+						<v-btn :disabled="!valid" color="success" class="mr-3" @click="validate">Submit</v-btn>
+					</v-form>
+				</v-card>
 			</v-flex>
 		</v-layout>
 	</v-container>
