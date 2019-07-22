@@ -24,6 +24,8 @@
 
 						<v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
 
+						<v-text-field v-model="number" :rules="emailRules" label="Mobile Number" required></v-text-field>
+
 						<v-layout>
 							<v-flex xs12 md6 lg2>
 								<v-select
@@ -83,6 +85,8 @@
 							<v-flex md-6>
 								<v-checkbox v-model="checkbox3" label="Include Children?"></v-checkbox>
 							</v-flex>
+
+							
 						</v-layout>
 						<div class="font-italic">
 							DISCLAIMER: By submitting your information you expressly consent
@@ -115,6 +119,7 @@ export default {
 	data: () => ({
 		valid: true,
 		name: "",
+		number: "",
 		nameRules: [
 			v => !!v || "Name is required",
 			v => (v && v.length <= 20) || "Name must be less than 10 characters"
