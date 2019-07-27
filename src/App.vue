@@ -1,17 +1,18 @@
 <template>
 	<v-app>
 		<v-toolbar app>
-			<v-container pa-0 style="color:blue">
-				<v-layout column >
-					<v-flex text-xs-center >
-						<div class="text-truncate" style="font-size: .60em">Speak with a representative now!</div>
-					</v-flex>
-					<v-flex text-xs-center>
-						<div class="font-weight-bold" style="font-size: 2em">+1 877-342-4747</div>
-					</v-flex>
-				</v-layout>
-			</v-container>
+			<v-toolbar-side-icon>
+				<v-img :src="require('./assets/icon.png')" left></v-img>
+			</v-toolbar-side-icon>
+
+			<v-toolbar-title>Get Medical Insurance Now</v-toolbar-title>
+			<v-spacer></v-spacer>
+			<v-toolbar-items class="hidden-sm-and-down">
+				<v-btn large flat>+1 877-342-4747</v-btn>
+
+			</v-toolbar-items>
 		</v-toolbar>
+
 
 		<v-content>
 			<InputForm />

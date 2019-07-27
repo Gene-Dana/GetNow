@@ -1,5 +1,5 @@
 <template>
-	<v-container pa-3>
+	<v-container pa-2>
 		<v-layout wrap justify-center>
 			<!-- <v-layout row wrap justify-space-around>
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
@@ -9,22 +9,35 @@
 				<v-card>
 					<v-img :src="require('../assets/GetNow.png')" min-width="50%"></v-img>
 				</v-card>
+				<v-card flat color="transparent" class="ma-0">
+					<v-card-title class="title amber--text " > Shop Plans Today</v-card-title>
+ 					
 
-				<v-card flat color=transparent class="mt-4">
-					<p> &nbsp; &nbsp; &nbsp; Coverage when you need it, we deal specially in short term health insurance.
-						Short term health insurance is a great way for people to fill gaps in insurance coverage 
-						without sacrificing routine healthcare services. In some cases, you can get coverage as 
-						soon as tomorrow and can cancel anytime without a termination penalty. Plus, short term 
-						plans offer a range of deductibles making it easy to find the right benefits at the right 
-						price</p>
+				</v-card>
+				<v-card flat color="transparent" class="mt-4">
+					<v-img :src="require('../assets/uhc.png')" max-width="50%"></v-img>
+				</v-card>
+
+				<v-card flat color="transparent" class="mt-4">
+					<p>
+						&nbsp; &nbsp; &nbsp; Coverage when you need it, we deal specially in short term health insurance.
+						Short term health insurance is a great way for people to fill gaps in insurance coverage
+						without sacrificing routine healthcare services. In some cases, you can get coverage as
+						soon as tomorrow and can cancel anytime without a termination penalty. Plus, short term
+						plans offer a range of deductibles making it easy to find the right benefits at the right
+						price
+					</p>
+				</v-card>
+				<v-card>
+					<v-img :src="require('../assets/uhc.svg')" min-width="50%"></v-img>
 				</v-card>
 				<v-card flat color="transparent">
 					<v-form ref="form" v-model="valid" :lazy-validation="lazy">
-						<v-text-field v-model="name" :rules="nameRules" label="Name" required></v-text-field>
+						<v-text-field v-model="fname" :rules="nameRules" label="First Name" required></v-text-field>
 
-						<v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
+						<v-text-field v-model="femail" :rules="emailRules" label="E-mail"></v-text-field>
 
-						<v-text-field v-model="number" :rules="emailRules" label="Mobile Number" required></v-text-field>
+						<v-text-field v-model="fnumber" label="Mobile Number" required></v-text-field>
 
 						<v-layout>
 							<v-flex xs12 md6 lg2>
@@ -85,18 +98,16 @@
 							<v-flex md-6>
 								<v-checkbox v-model="checkbox3" label="Include Children?"></v-checkbox>
 							</v-flex>
-
-							
 						</v-layout>
 						<div class="font-italic">
 							DISCLAIMER: By submitting your information you expressly consent
 							to receiving phone calls, e-mails and SMS messages from ProDesk,
 							it's subsidiaries and/or one of it's trusted partners at the phone
 							number or email listed above to provide you quotes for health insurance.
-							You understand that your consent to being contacted does not 
-							require you to purchase a health insurance plan. Receiving quotes from 
-							ProDesk is always free. Additional charges may apply to SMS, call or 
-							Internet usage depending on your data providers. You can opt out of 
+							You understand that your consent to being contacted does not
+							require you to purchase a health insurance plan. Receiving quotes from
+							ProDesk is always free. Additional charges may apply to SMS, call or
+							Internet usage depending on your data providers. You can opt out of
 							receiving future messages from HealthNetwork.
 						</div>
 						<v-checkbox
@@ -118,8 +129,9 @@
 export default {
 	data: () => ({
 		valid: true,
-		name: "",
-		number: "",
+		femail: "",
+		fname: "",
+		fnumber: "",
 		nameRules: [
 			v => !!v || "Name is required",
 			v => (v && v.length <= 20) || "Name must be less than 10 characters"
