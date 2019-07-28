@@ -28,9 +28,7 @@
 						price
 					</p>
 				</v-card>
-				<v-card>
-					<v-img :src="require('../assets/uhc.svg')" min-width="50%"></v-img>
-				</v-card>
+			
 				<v-card flat color="transparent">
 					<v-form ref="form" v-model="valid" :lazy-validation="lazy">
 						<v-text-field v-model="fname" :rules="nameRules" label="First Name" required></v-text-field>
