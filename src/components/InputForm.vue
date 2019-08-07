@@ -58,7 +58,7 @@
 									max-height="15em"
 									class="mx-auto px-3 text-center"
 								>
-									<v-card-title class="justify-center title white--text">Get a Short-Term Quote Now</v-card-title>
+									<v-card-title class="justify-center title white--text">Get a Short Term Health Insurance Quote Now</v-card-title>
 								</v-card>
 								<v-card flat color="transparent" class="pa-4">
 									<v-form ref="form" v-model="valid" :lazy-validation="lazy">
