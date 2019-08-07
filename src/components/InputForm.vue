@@ -23,7 +23,7 @@
 								</v-card>
 
 								<v-card flat color="amber--text" class="ma-0">
-									<v-card-title class="headline align-left font-weight-black pa-2">Shop Term Health Plans</v-card-title>
+									<v-card-title class="headline align-left font-weight-black pa-2">Short Term Health Plans</v-card-title>
 								</v-card>
 
 								<v-card flat color="transparent" class="mt-4 ma-3 body-1 font-weight-medium">
