@@ -60,7 +60,7 @@
 								>
 									<v-card-title class="justify-center title white--text">Get a Short Term Health Insurance Quote Now</v-card-title>
 								</v-card>
-								<v-card flat color="transparent" class="pa-4">
+								<v-card flat color="transparent" class="pa-5">
 									<v-form ref="form" v-model="valid" :lazy-validation="lazy">
 										<v-text-field v-model="fname" :rules="nameRules" label="First Name" required></v-text-field>
 
@@ -128,17 +128,7 @@
 												<v-checkbox v-model="checkbox3" label="Include Children?"></v-checkbox>
 											</v-flex>
 										</v-layout>
-										<div class="font-italic">
-											DISCLAIMER: By submitting your information you expressly consent
-											to receiving phone calls, e-mails and SMS messages from ProDesk,
-											it's subsidiaries and/or one of it's trusted partners at the phone
-											number or email listed above to provide you quotes for health insurance.
-											You understand that your consent to being contacted does not
-											require you to purchase a health insurance plan. Receiving quotes from
-											ProDesk is always free. Additional charges may apply to SMS, call or
-											Internet usage depending on your data providers. You can opt out of
-											receiving future messages from HealthNetwork.
-										</div>
+										
 										<v-checkbox
 											v-model="checkbox1"
 											:rules="[v => !!v || 'You must agree to continue!']"
@@ -147,6 +137,18 @@
 										></v-checkbox>
 
 										<v-btn :disabled="!valid" color="success" class="mr-3" @click="validate">Shop Plans Now</v-btn>
+
+										<div class="font-italic mt-3">
+											DISCLAIMER: By submitting your information you expressly consent
+											to receiving phone calls, e-mails and SMS messages from Get Medical Insurance Now,
+											it's subsidiaries and/or one of it's trusted partners at the phone
+											number or email listed above to provide you quotes for health insurance.
+											You understand that your consent to being contacted does not
+											require you to purchase a health insurance plan. Receiving quotes from
+											Get Medical Insurance Now is always free. Additional charges may apply to SMS, call or
+											Internet usage depending on your data providers. You can opt out of
+											receiving future messages from HealthNetwork.
+										</div>
 									</v-form>
 								</v-card>
 							</v-flex>
@@ -184,7 +186,9 @@
 										</li>
 									</ul>
 								</v-card-text>
-								<v-btn color="blue" class="white--text ma-3" @click="$vuetify.goTo('#dashboard')">Shop Plans</v-btn>
+								<v-flex>
+								<v-btn tile color="blue" min-width="100%" class="white--text ma-3" @click="$vuetify.goTo('#dashboard')">Shop Plans</v-btn>
+								</v-flex>
 							</v-card>
 						</v-flex>
 
@@ -216,7 +220,7 @@
 
 								<v-card flat class="mx-auto mt-5 px-3 mb-5">
 									<v-layout row align-center wrap>
-										<v-flex xs12 sm6 md3>
+										<v-flex xs6 sm6 md3>
 											<v-card class="text-xs-center pa-0" flat color="transparent">
 												<v-icon style="font-size: 70px" class="blue--text text--darken-2">av_timer</v-icon>
 												<v-card-text class="blue--text text--darken-2 title pa-1">Fast Quote and Application</v-card-text>
@@ -224,21 +228,21 @@
 											</v-card>
 										</v-flex>
 
-										<v-flex xs12 sm6 md3>
+										<v-flex xs6 sm6 md3>
 											<v-card class="text-xs-center pa-0" flat color="transparent">
 												<v-icon style="font-size: 70px" class="blue--text text--darken-2">attach_money</v-icon>
 												<v-card-text class="blue--text text--darken-2 title pa-1">Budget Friendly Plans</v-card-text>
 												<v-card-text class="font-italic pa-1">Choose options to fit your needs and budget</v-card-text>
 											</v-card>
 										</v-flex>
-										<v-flex xs12 sm6 md3>
+										<v-flex xs6 sm6 md3>
 											<v-card class="text-xs-center pa-0" flat color="transparent">
 												<v-icon style="font-size: 70px" class="blue--text text--darken-2">today</v-icon>
 												<v-card-text class="blue--text text--darken-2 title pa-1">Next Day Coverage</v-card-text>
 												<v-card-text class="font-italic pa-1">Apply today for coverage starting tomorrow</v-card-text>
 											</v-card>
 										</v-flex>
-										<v-flex xs12 sm6 md3>
+										<v-flex xs6 sm6 md3>
 											<v-card class="text-xs-center pa-0" flat color="transparent">
 												<v-icon style="font-size: 70px" class="blue--text text--darken-2">check_box</v-icon>
 												<v-card-text class="blue--text text--darken-2 title pa-1">Available Year Round</v-card-text>
