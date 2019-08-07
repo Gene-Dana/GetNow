@@ -19,7 +19,7 @@
 								</v-card>
 								<v-divider></v-divider>
 								<v-card flat color="transparent" class="ma-5">
-									<v-img :src="require('../assets/uhc.png')" max-width="50%"></v-img>
+									<v-img :src="require('../assets/uhc.png')" max-width="80%"></v-img>
 								</v-card>
 
 								<v-card flat color="amber--text" class="ma-0">
