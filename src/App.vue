@@ -1,32 +1,23 @@
 <template>
 	<v-app>
-		<v-toolbar app>
-			<v-toolbar-side-icon>
-				<v-img :src="require('./assets/icon.png')" left></v-img>
-			</v-toolbar-side-icon>
-
-			<v-toolbar-title>Get Medical Insurance Now</v-toolbar-title>
-			<v-spacer></v-spacer>
-			<v-toolbar-items class="hidden-sm-and-down">
-				<v-btn large flat>+1 877-342-4747</v-btn>
-
-			</v-toolbar-items>
-		</v-toolbar>
-
+		<Navvy />
 
 		<v-content>
 			<InputForm />
+			<Footer />
 		</v-content>
 	</v-app>
 </template>
 
 <script>
 import InputForm from "./components/InputForm";
+import Footer from "./components/Footer";
+import Navvy from "./components/Navvy"
 
 export default {
 	name: "App",
 	metaInfo: {
-		title: "My Example App",
+		title: "Get Medical Insurance Now",
 		titleTemplate: "%s - Yay!",
 		htmlAttrs: {
 			lang: "en",
@@ -34,7 +25,9 @@ export default {
 		}
 	},
 	components: {
-		InputForm
+		InputForm,
+		Footer,
+		Navvy
 	},
 	data() {
 		return {
