@@ -50,7 +50,7 @@
 								</v-card>
 							</v-flex>
 
-							<v-flex xs12 sm7 md5 lg5 xl5>
+							<v-flex xs12 sm5 md5 lg5 xl5>
 								<v-card
 									flat
 									color="light blue darken-4"
