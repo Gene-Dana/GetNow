@@ -9,7 +9,7 @@
 				<v-card class="pa-3 mx-2 my-3" color="grey lighten-3" id="dashboard">
 					<v-card class="pa-3">
 						<v-layout wrap>
-							<v-flex xs12 sm12 md7 lg7 xl7>
+							<v-flex xs12 sm7 md7 lg7 xl7>
 								<!-- <v-card>
 					<v-img :src="require('../assets/GetNow.png')" min-width="50%"></v-img>
 								</v-card>-->
@@ -50,7 +50,7 @@
 								</v-card>
 							</v-flex>
 
-							<v-flex xs12 sm12 md5 lg5 xl5>
+							<v-flex xs12 sm7 md5 lg5 xl5>
 								<v-card
 									flat
 									color="light blue darken-4"
