@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid>
+	<v-container fluid pb-0>
 		<v-layout column>
 			<!-- <v-layout row wrap justify-space-around>
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
@@ -274,7 +274,7 @@
 			</v-flex>
 
 			<v-flex>
-				<v-card flat class="pa-3 mx-4 font-italic" color="transparent">
+				<v-card flat class="px-3 mx-4 font-italic" color="transparent">
 					<v-card-text>
 						<strong>*Disclaimer:</strong> This Website is not associated with Healthcare.gov.
 						HealthNetwork is not a licensed agent or broker and cannot write insurance
