@@ -1,5 +1,5 @@
 <template>
-	<v-container fluid pb-0>
+	<v-container fluid >
 		<v-layout column>
 			<!-- <v-layout row wrap justify-space-around>
 			<v-switch v-model="valid" class="ma-3" label="Valid" readonly></v-switch>
